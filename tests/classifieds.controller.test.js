@@ -16,12 +16,12 @@ describe('Calulator App', function () {
              $scope.add();
              expect($scope.result).toBe(3);   
         });
-         it('1 + 1 should not equal 3', function () {
+         /*it('1 + 1 should not equal 3', function () {
              $scope.firstNum = 1;
              $scope.secondNum = 1;
              $scope.add();
              expect($scope.result).toBe(3);   
-        });
+        });*/
     });
       
      describe('Subtraction Operation', function () {
