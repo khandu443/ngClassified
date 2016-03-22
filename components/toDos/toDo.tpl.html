@@ -1,0 +1,50 @@
+<div layout="row" layout-align="center center">
+    <md-input-container>
+        <label>Search ToDo's</label>
+        <input type="text" ng-model="toDoFilter">
+    </md-input-container>
+</div>
+<div layout="row" layout-align="center center">
+    <div  ng-cloak md-whiteframe="17"  flex-sm="45" flex-gt-sm="35" flex-gt-md="25" class="md-padding">
+        <md-section >
+            <h3>Pending ToDo's</h3>    
+
+            <ol>
+                <li ng-repeat="todo in todoList | filter: toDoFilter">
+                    <input type="checkbox" ng-model="todo.done">
+                    <span class="done-{{ todo.done }}">{{ todo.text }}</span>
+                </li>
+                <span ng-if="todoList.length == 0">--List is empty--</span>
+            </ol>
+
+            <form ng-submit="addTodo()" class="todo-form">
+                <br />
+                <md-input-container >
+                    <label>Enter ToDo Item</label>
+                    <input type="text" ng-model="todoItem" />
+                </md-input-container >
+                <md-input-container layout="row">
+                    <md-button type="submit" class="md-primary">Add Task</md-button>
+                    <md-button class="md-warn" ng-click="archive()"> Completed Task(s)</md-button>
+                </md-input-container>
+            </form>
+        </md-section>
+    </div>
+
+    <div  ng-cloak md-whiteframe="18"  flex-sm="45" flex-gt-sm="35" flex-gt-md="25" class="md-padding">
+        <md-section >
+        <h3>Completed ToDo's</h3>
+            <ol>
+                <li ng-repeat="todo in completedToDos | filter: toDoFilter">
+                    <input type="checkbox" ng-model="todo.done">
+                    <span class="done-{{ todo.done }}">{{ todo.text }}</span>
+                </li>
+                <span ng-if="completedToDos.length == 0">--List is empty--</span>
+            </ol>
+            <md-input-container layout="row">
+                 <md-button class="md-warn" ng-click="deleteTask()"> Delete Selected Task</md-button>            
+            </md-input-container>  
+        </md-section>
+    </div>
+
+</div>

@@ -1,0 +1,28 @@
+<div class="jumbotron">
+            <div class="container">
+                <div class="form-group">
+                    <label>Enter First Number</label>
+                    <input ng-model="firstNum">
+                </div>
+                <div class="form-group">
+                    <label>Enter Second Number</label>
+                    <input ng-model="secondNum">
+                </div>
+                <div class="form-group">
+                        <div class="dropdown">
+                    <label>Select Operation</label>            
+                            <span style="display:inline-block;"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{operation}}<span class="caret xs-pull-right"></span></span>
+                            <ul class="dropdown-menu" >
+                                <li>None</li>
+                                <li ng-click="add()">Add</li>
+                                <li ng-click="subtract()">Subtract</li>
+                                <li ng-click="multiply()">Multiply</li>
+                                <li ng-click="divide()">Divide</li>  
+                            </ul>                        
+                        <input ng-model="result">
+                        </div>
+                </div>
+
+            
+            </div>
+        </div>
